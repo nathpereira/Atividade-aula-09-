@@ -1,0 +1,208 @@
+Console.WriteLine(
+    {
+       
+
+    {
+"Bem-vindo ao programa de gerenciamento de estacionamento!");
+
+        
+
+bool executando = true;
+        
+       
+while (executando)
+        {
+            Console.WriteLine(
+        {
+            Console.WriteLine
+
+        {
+            Console
+
+        {
+
+       
+"\nEscolha uma opção:");
+            Console.WriteLine(
+            Console.WriteLine
+
+           
+"1. Estacionar");
+            Console.WriteLine(
+            Console
+
+           
+"2. Retirar veículo");
+            Console.WriteLine(
+           
+"3. Listar veículos");
+            Console.WriteLine(
+           
+"4. Sair");
+
+            
+
+string opcao = Console.ReadLine();
+
+            switch (opcao)
+            {
+                
+            {
+               
+
+            {
+case "1":
+                    EstacionarVeiculo();
+                    
+                    EstacionarVeiculo();
+
+                    Est
+break;
+                
+               
+case "2":
+                    RetirarVeiculo();
+                    
+                    RetirarVeiculo();
+                   
+
+                    Retir
+
+                   
+break;
+                case "3":
+                    ListarVeiculos();
+                    
+                    Listar
+break;
+                case "4":
+                    executando = 
+                   
+false;
+                    break;
+                
+               
+default:
+                    Console.WriteLine(
+                   
+"Opção inválida. Por favor, escolha uma opção válida.");
+                    break;
+            }
+        }
+
+        Console.WriteLine(
+            }
+        }
+
+       
+"Obrigado por utilizar o programa de gerenciamento de estacionamento!");
+    }
+
+    
+    }
+
+   
+
+    }
+
+static void EstacionarVeiculo()
+    {
+        Console.WriteLine(
+    {
+       
+"\nDigite a placa do veículo que deseja estacionar:");
+        
+       
+string placa = Console.ReadLine().ToUpper();
+
+        
+
+       
+if (placa.Length != 6)
+        {
+            Console.WriteLine(
+        {
+           
+
+        {
+"A placa do veículo deve ter exatamente 6 caracteres. O veículo não foi estacionado.");
+            return;
+        }
+
+        
+        }
+
+       
+
+       
+if (estacionamento.ContainsKey(placa))
+        {
+            Console.WriteLine(
+        {
+            Console.WriteLine
+
+        {
+            Console
+
+        {
+           
+
+        {
+"Já existe um veículo com essa placa estacionado. O veículo não foi estacionado.");
+        }
+        
+       
+else
+        {
+            estacionamento.Add(placa, placa);
+            Console.WriteLine(
+        {
+            estacionamento.Add(placa, placa);
+           
+
+        {
+            estacionamento.Add(placa, placa);
+
+        {
+            est
+
+        {
+"Veículo estacionado com sucesso!");
+        }
+    }
+
+    static void RetirarVeiculo()
+    {
+        Console.WriteLine(
+    {
+       
+"\nDigite a placa do veículo que deseja retirar:");
+        string placa = Console.ReadLine().ToUpper();
+
+        if (estacionamento.ContainsKey(placa))
+        {
+            estacionamento.Remove(placa);
+            Console.WriteLine("Veículo retirado com sucesso!");
+        }
+        else
+        {
+            Console.WriteLine(
+        {
+            Console.WriteLine
+"O veículo com a placa informada não está estacionado.");
+        }
+    }
+
+    
+        }
+   
+static void ListarVeiculos()
+    {
+        Console.WriteLine("\nVeículos estacionados:");
+        foreach (string placa in estacionamento.Keys)
+        {
+            Console.Write($"[{placa}] ");
+        }
+        Console.WriteLine();
+    }
+}
